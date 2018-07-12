@@ -41,10 +41,11 @@ local myShader =
     }
 ]]
 
-local w = {love.graphics.getDimensions()}
+local w
 local counter = 0
 
 function love.update(dt)
+    w = {love.graphics.getDimensions()}
     myShader:send('maxX', w[1])
     myShader:send('maxY', w[2])
     myShader:send('counter', counter)
